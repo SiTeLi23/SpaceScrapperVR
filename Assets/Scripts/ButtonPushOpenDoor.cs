@@ -8,9 +8,18 @@ public class ButtonPushOpenDoor : MonoBehaviour
     public Animator animator;
     public string boolName = "Open";
 
+    private void Start()
+    {
+        
+    }
     public void OpenDoor() 
     {
-        bool isOpen = animator.GetBool(boolName);
-        animator.SetBool(boolName, !isOpen);
+        if (enabled == true)
+        {
+            bool isOpen = animator.GetBool(boolName);
+            animator.SetBool(boolName, !isOpen);
+
+            AudioManager.instance.Play("Door");
+        }
     }
 }

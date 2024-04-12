@@ -12,6 +12,7 @@ public class TriggerZone : MonoBehaviour
         if(other.gameObject.tag == targetTag) 
         {
             OnEnterEvent.Invoke(other.gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
